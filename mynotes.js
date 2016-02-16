@@ -12,3 +12,4 @@
 //then npm install in terminal ^^added the above:express, mongoose, body-parser
 //touch server.js in crud-bears-mongo
 //command line: 'echo "node_modules/" >> .gitignore' = created & told .gitignore to add node_modules/
+//sudo mongod to start running mongo
