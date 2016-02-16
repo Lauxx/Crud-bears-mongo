@@ -64,6 +64,17 @@ router.route('/bears')
 	});
 
 
+router.route('/bears/:bear_id')//finding bears by id
+	.get(function(req, res){
+		Bear.findById(req.params.bear_id, function(err, bear){
+			if(err){
+				console.log(err)
+			}else{
+				res.json(bear)
+			}
+		})
+	});
+
 
 
 
