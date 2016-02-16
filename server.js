@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 var port = process.env.PORT || 8080;
 //^^set a port
 var router = express.Router();
-
+//^^get an instance of router
 router.get('/', function(req, res){
 	res.json({message: 'Good job Lauren!'});
 });
