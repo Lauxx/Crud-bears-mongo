@@ -2,6 +2,10 @@ var express = require('express');//called express
 var app = express();//define our app using epress
 var bodyParser = require('body-parser');
 //^^set dependencies
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/animals');
+//object relational matter ORM = mongoose reaches into database; want to use animals database
+//run mongo(database) in terminal 'sudo mongod' - connects with database
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 //^^mounting middleware
