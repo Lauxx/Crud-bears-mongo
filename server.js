@@ -27,10 +27,7 @@ router.get('/', function(req, res){
 }); //^^test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 
 
-//MORE ROUTES FOR OUR API WILL HAPPEN HERE!
-
-
-
+//MORE ROUTES FOR OUR API WILL HAPPEN BELOW!
 
 
 router.route('/bears')
