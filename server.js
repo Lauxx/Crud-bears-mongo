@@ -35,7 +35,11 @@ app.get('/', function(req, res){
 });
 
 app.get('/about', function(req, res){
-	res.render('about')
+	var data ={};
+	data.title ="About Page";
+	data.name = "Lauren";
+	data.time = new Date();
+	res.render('about', data)
 });
 
 app.use('/api', bearRouter); //REGISTER OUR ROUTES: all of our routes will be prefixed with /api
