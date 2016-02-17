@@ -42,6 +42,10 @@ app.get('/about', function(req, res){
 	res.render('about', data)
 });
 
+app.get('/bears', function(req, res){
+	res.render('bears')
+});
+
 app.use('/api', bearRouter); //REGISTER OUR ROUTES: all of our routes will be prefixed with /api
 
 app.listen(port); //START THE SERVER
