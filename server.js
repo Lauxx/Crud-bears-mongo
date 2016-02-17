@@ -31,7 +31,11 @@ router.get('/', function(req, res){
 
 app.set('view engine', 'ejs');//just trying to view in browser - configuation view engine
 app.get('/', function(req, res){
-	res.render('index', {name: 'You are a beautiful soul'})//index.ejs file - should show in browser at localhost:8000
+	res.render('index')//index.ejs file - should show in browser at localhost:8000
+});
+
+app.get('/about', function(req, res){
+	res.render('about')
 });
 
 app.use('/api', bearRouter); //REGISTER OUR ROUTES: all of our routes will be prefixed with /api
