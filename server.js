@@ -43,7 +43,13 @@ app.get('/about', function(req, res){
 });
 
 app.get('/bears', function(req, res){
-	res.render('bears')
+	Bear.find(function(err, bears){
+			if(err){
+				console.log(err)
+			}else{
+				res.render('bears',{bears:bears})
+			}
+		})
 });
 
 app.use('/api', bearRouter); //REGISTER OUR ROUTES: all of our routes will be prefixed with /api

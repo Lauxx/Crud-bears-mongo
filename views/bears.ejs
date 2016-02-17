@@ -32,9 +32,11 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td></td>
-						</tr>
+						<% for(var i=0; i < bears.length; i++) {%>
+						<tr><td><%=bears[i].name%></td>
+						<td><%=bears[i].age%></td>
+						<td><%=bears[i].gender%></td><tr>
+						<% }; %>
 					</tbody>
 				</table>
 			</div>
