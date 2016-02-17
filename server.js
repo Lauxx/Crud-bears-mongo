@@ -14,7 +14,7 @@ var Bear = require('./models/bear');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());  //mounting middleware
 
-var port = process.env.PORT || 8080; //set a port
+var port = process.env.PORT || 8000; //set a port
 
 var router = express.Router(); //get an instance of router
 
@@ -28,6 +28,11 @@ router.get('/', function(req, res){
 	res.json({message: 'Good job Lauren!'});
 }); //^^test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 
+
+app.set('view engine', 'ejs');//just trying to view in browser - configuation view engine
+app.get('/', function(req, res){
+	res.render('index', {name: 'You are a beautiful soul'})//index.ejs file - should show in browser at localhost:8000
+});
 
 app.use('/api', bearRouter); //REGISTER OUR ROUTES: all of our routes will be prefixed with /api
 

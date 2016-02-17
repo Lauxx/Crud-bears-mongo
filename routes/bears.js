@@ -4,6 +4,7 @@ var router = express.Router();
 var Bear = require('../models/bear');
 
 
+
 router.route('/bears')
 	.post(function(req, res){
 
@@ -17,7 +18,7 @@ router.route('/bears')
 			if(err){
 				console.log(err)//do something
 			}else{
-				res.json(bear)//do something
+				res.json(bear)
 			}
 		});
 
