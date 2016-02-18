@@ -14,7 +14,8 @@ var Bear = require('./models/bear');
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());  //mounting middleware
+app.use(bodyParser.json());  //mounting middleware; is software that acts as a bridge
+//between an operating system/database and applications
 
 var port = process.env.PORT || 8000; //set a port
 
@@ -28,10 +29,11 @@ router.use(function(req, res, next){
 
 router.get('/', function(req, res){
 	res.json({message: 'Good job Lauren!'});
-}); //^^test route to make sure everything is working (accessed at GET http://localhost:8080/api)
+}); //^^test route to make sure everything is working (accessed at GET http://localhost:8000/api)
 
 
-app.set('view engine', 'ejs');//just trying to view in browser - configuation view engine
+app.set('view engine', 'ejs');
+//just trying to view in browser - configuration view engine
 app.get('/', function(req, res){
 	res.render('index')//index.ejs file - should show in browser at localhost:8000
 });
@@ -42,14 +44,14 @@ app.get('/about', function(req, res){
 	data.name = "Lauren";
 	data.time = new Date();
 	res.render('about', data)
-});
+});//no database? we hard coded
 
 app.get('/bears', function(req, res){
-	Bear.find(function(err, bears){
+	Bear.find(function(err, data){//error first callbacks
 			if(err){
 				console.log(err)
 			}else{
-				res.render('bears',{bears:bears})
+				res.render('bears',{bears:data})
 			}
 		})
 });

@@ -1,6 +1,6 @@
 console.log("hello there lois");
 
-$('#addBear').on('click', addBear)
+
 
 
 var deleteBear = function(){

@@ -51,7 +51,7 @@ router.route('/bears/:bear_id')//finding bears by id
 			if(err){
 				console.log(err)
 			}else{
-				bear.name = req.body.name ? req.body.name : bear.name; //terinary statement
+				bear.name = req.body.name ? req.body.name : bear.name; //ternary statement
 				bear.age = req.body.age ? req.body.age : bear.age;
 				bear.gender = req.body.gender ? req.body.gender : bear.gender;
 
