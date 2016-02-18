@@ -11,6 +11,8 @@ var bearRouter= require('./routes/bears');
 
 var Bear = require('./models/bear');
 
+app.use(express.static('public'));
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());  //mounting middleware
 

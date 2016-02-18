@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 	
 	</head>
-
+<body>
 	<div class="jumbotron">
 		<div class="container">
 			<h1>Bears Page</h1>
@@ -20,7 +20,7 @@
 			</p>
 		</div>
 	</div>
-	<body>
+	
 		<div class="col-xs-8 col-md-offset-2">
 			<div class="table-responsive">
 				<table class="table table-hover">
@@ -33,15 +33,32 @@
 					</thead>
 					<tbody>
 						<% for(var i=0; i < bears.length; i++) {%>
-						<tr><td><%=bears[i].name%></td>
+						<tr>
+						<td><%=bears[i].name%></td>
 						<td><%=bears[i].age%></td>
-						<td><%=bears[i].gender%></td><tr>
+						<td><%=bears[i].gender%></td>
+						<td><button class="btn btn-danger deleteBear">Delete</button></td>
+						<tr>
 						<% }; %>
 					</tbody>
 				</table>
 			</div>
 		</div>
-
+		<div class="container form-pretty">
+			
+				<form action="/api/bears" method="POST" role="form">
+					<legend>Creat a new bear!</legend>
+				
+					<div class="form-group">
+						<input name="name" type="text" class="form-control" id="" placeholder="Name">
+						<input name="age" type="text" class="form-control" id="" placeholder="Age">
+						<input name="gender" type="text" class="form-control" id="" placeholder="Gender">
+					</div>
+			
+					<button type="submit" class="btn btn-info">Submit Your Bear</button>
+						
+				</form>
+		</div>
 
 
 
