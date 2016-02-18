@@ -52,7 +52,9 @@ app.get('/bears', function(req, res){
 				console.log(err)
 			}else{
 				res.render('bears',{bears:data})
-			}
+			}//'bears'= url
+			 //bears: an object that we can use in ejs, that has info from Bear.find
+			 //data:value from function from parameter above
 		})
 });
 
