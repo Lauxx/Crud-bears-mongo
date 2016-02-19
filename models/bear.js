@@ -8,6 +8,8 @@ var BearSchema = new Schema({
 	gender: String, 
 });
 
-
-
 module.exports = mongoose.model('Bear', BearSchema);
+//this is all necessary to create new bears in our database
+//Schema method on mongoose; new = constructor function
+//create a model/blueprint
+//every schema gets it's own file

@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router();
+var router = express.Router();//getting an instance of router
 
 var Bear = require('../models/bear');
 

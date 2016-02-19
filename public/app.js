@@ -51,7 +51,7 @@ var addBear = function(){
 
 	});
 
-	$('#name').val('');
+	$('#name').val('');//clears input fields
 	$('#age').val('');
 	$('#gender').val('');
 
