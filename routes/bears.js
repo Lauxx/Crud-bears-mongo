@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();//getting an instance of router
 
-var Bear = require('../models/bear');
+var Bear = require('../models/bear');//requiring our schema again
 
 
 
-router.route('/bears')
+router.route('/bears')//this is were we want to POST and GET
 	.post(function(req, res){
 
-		var bear = new Bear();
+		var bear = new Bear();//constructing a new bear with schema
 
 		bear.name = req.body.name;
 		bear.age = req.body.age;
@@ -36,7 +36,7 @@ router.route('/bears')
 	});
 
 
-router.route('/bears/:bear_id')//finding bears by id
+router.route('/bears/:bear_id')//finding bears by id; colon says its a param
 	.get(function(req, res){
 		Bear.findById(req.params.bear_id, function(err, bear){
 			if(err){

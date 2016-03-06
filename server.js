@@ -31,7 +31,7 @@ router.get('/', function(req, res){
 	res.json({message: 'Good job Lauren!'});
 }); //^^test route to make sure everything is working (accessed at GET http://localhost:8000/api)
 
-
+//enables ejs templates & can put default folder 'views' 
 app.set('view engine', 'ejs');
 //just trying to view in browser - configuration view engine
 app.get('/', function(req, res){
@@ -47,6 +47,7 @@ app.get('/about', function(req, res){
 });//no database? we hard coded
 
 app.get('/bears', function(req, res){
+	
 	Bear.find(function(err, data){//error first callbacks
 			if(err){
 				console.log(err)
